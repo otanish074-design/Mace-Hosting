@@ -2,113 +2,154 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mace Hosting</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 
-body{
-margin:0;
-font-family:'Orbitron', sans-serif;
-color:white;
-background: linear-gradient(120deg,#0f172a,#020617,#0f172a);
-background-size:400% 400%;
-animation:bgmove 12s infinite alternate;
-}
+*{margin:0;padding:0;box-sizing:border-box}
 
-@keyframes bgmove{
-0%{background-position:left;}
-100%{background-position:right;}
+body{
+font-family:Poppins;
+background:#050816;
+color:white;
 }
 
 header{
-text-align:center;
-padding:40px;
-font-size:40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+background:#020617;
+position:sticky;
+top:0;
 }
 
-nav{
-text-align:center;
-margin-bottom:40px;
+.logo{
+font-family:Orbitron;
+font-size:24px;
+color:#22c55e;
 }
 
 nav a{
-color:white;
+margin:0 15px;
 text-decoration:none;
-margin:15px;
-font-size:18px;
+color:white;
 }
 
-.container{
-max-width:1200px;
-margin:auto;
-padding:20px;
+.hero{
+height:85vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+background:linear-gradient(120deg,#020617,#0f172a,#020617);
+background-size:300% 300%;
+animation:bgmove 10s infinite alternate;
+}
+
+@keyframes bgmove{
+0%{background-position:left}
+100%{background-position:right}
+}
+
+.hero h1{
+font-size:55px;
+margin-bottom:15px;
+}
+
+.hero p{
+opacity:0.8;
+margin-bottom:25px;
+}
+
+.btn{
+background:#22c55e;
+padding:12px 30px;
+border-radius:8px;
+text-decoration:none;
+color:white;
+margin:10px;
+display:inline-block;
 }
 
 .section{
-margin-top:60px;
+padding:80px 10%;
 text-align:center;
 }
 
-.plans{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
+.section h2{
+margin-bottom:40px;
+font-size:32px;
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:25px;
 }
 
-.card{
-background:#111827;
+.feature{
+background:#0f172a;
 padding:25px;
+border-radius:10px;
+}
+
+.pricing{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+}
+
+.plan{
+background:#0f172a;
+padding:30px;
 border-radius:12px;
-width:250px;
-box-shadow:0 0 15px #00ffcc33;
 }
 
 .price{
-font-size:28px;
-margin:15px 0;
+font-size:40px;
+color:#22c55e;
+margin:20px 0;
 }
 
-button{
+.plan ul{
+list-style:none;
+margin-bottom:20px;
+}
+
+.plan li{
+margin:8px 0;
+}
+
+.plan button{
 background:#22c55e;
 border:none;
-padding:12px 25px;
+padding:10px 25px;
 border-radius:8px;
 color:white;
 cursor:pointer;
 }
 
-button:hover{
-background:#16a34a;
-}
-
-.features{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
+.hardware{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:30px;
-margin-top:30px;
 }
 
-.feature-box{
-background:#111827;
-padding:20px;
-border-radius:10px;
-width:250px;
+.hardware-box{
+background:#0f172a;
+padding:30px;
+border-radius:12px;
 }
 
 footer{
-margin-top:80px;
-text-align:center;
-padding:20px;
 background:#020617;
-}
-
-.discord{
-background:#5865F2;
-margin-top:15px;
+padding:30px;
+text-align:center;
+margin-top:50px;
 }
 
 </style>
@@ -117,103 +158,141 @@ margin-top:15px;
 <body>
 
 <header>
-⚡ Mace Minecraft Hosting
-</header>
-
+<div class="logo">Mace Hosting</div>
 <nav>
-<a href="#plans">Plans</a>
 <a href="#features">Features</a>
-<a href="#about">About</a>
+<a href="#hardware">Hardware</a>
+<a href="#pricing">Pricing</a>
 <a href="#support">Support</a>
 </nav>
+</header>
 
-<div class="container">
+<section class="hero">
+<div>
+<h1>Ultra Performance Minecraft Hosting</h1>
+<p>Powerful Ryzen CPUs • NVMe Storage • Instant Setup</p>
 
-<div class="section" id="plans">
-<h2>Server Plans</h2>
-
-<div class="plans">
-
-<div class="card">
-<h3>Starter</h3>
-<p>2GB RAM</p>
-<p>20GB SSD</p>
-<div class="price">₹150/mo</div>
-<button>Order</button>
+<a class="btn" href="#pricing">View Plans</a>
+<a class="btn" href="#">Client Panel</a>
 </div>
+</section>
 
-<div class="card">
-<h3>Pro</h3>
-<p>6GB RAM</p>
-<p>50GB SSD</p>
-<div class="price">₹350/mo</div>
-<button>Order</button>
-</div>
+<section class="section" id="features">
 
-<div class="card">
-<h3>Extreme</h3>
-<p>12GB RAM</p>
-<p>100GB SSD</p>
-<div class="price">₹700/mo</div>
-<button>Order</button>
-</div>
-
-</div>
-</div>
-
-
-<div class="section" id="features">
-<h2>Hosting Features</h2>
+<h2>Why Choose Mace Hosting</h2>
 
 <div class="features">
 
-<div class="feature-box">
-<h3>⚡ Powerful CPU</h3>
-<p>High performance servers for lag-free gameplay.</p>
+<div class="feature">
+<h3>⚡ Instant Setup</h3>
+<p>Deploy your Minecraft server within seconds.</p>
 </div>
 
-<div class="feature-box">
+<div class="feature">
 <h3>🛡 DDoS Protection</h3>
-<p>Your server stays online and protected.</p>
+<p>Advanced protection keeps your server safe.</p>
 </div>
 
-<div class="feature-box">
-<h3>🎮 Plugin Support</h3>
-<p>Supports Paper, Spigot, Fabric and Forge.</p>
+<div class="feature">
+<h3>🎮 Plugin & Mod Support</h3>
+<p>Paper, Spigot, Forge, Fabric supported.</p>
 </div>
 
-<div class="feature-box">
-<h3>📦 Full FTP Access</h3>
-<p>Upload plugins, worlds and mods easily.</p>
-</div>
-
-</div>
-</div>
-
-
-<div class="section" id="about">
-<h2>About Us</h2>
-<p>
-Mace Hosting provides powerful Minecraft servers with low latency and high performance.
-Perfect for SMP, events and large communities.
-</p>
-</div>
-
-
-<div class="section" id="support">
-<h2>Support</h2>
-<p>Need help? Join our Discord server.</p>
-
-<button class="discord" onclick="window.open('https://discord.gg/YOURINVITE')">
-Join Discord
-</button>
-
+<div class="feature">
+<h3>📂 Full File Manager</h3>
+<p>Upload plugins and worlds easily.</p>
 </div>
 
 </div>
+
+</section>
+
+<section class="section" id="hardware">
+
+<h2>Premium Hardware</h2>
+
+<div class="hardware">
+
+<div class="hardware-box">
+<h3>AMD Ryzen CPU</h3>
+<p>High single-core performance for Minecraft.</p>
+</div>
+
+<div class="hardware-box">
+<h3>NVMe SSD Storage</h3>
+<p>Ultra-fast world loading and chunk generation.</p>
+</div>
+
+<div class="hardware-box">
+<h3>DDR4 / DDR5 RAM</h3>
+<p>Guaranteed RAM allocation with no overselling.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="pricing">
+
+<h2>Server Plans</h2>
+
+<div class="pricing">
+
+<div class="plan">
+<h3>Starter</h3>
+<div class="price">₹149</div>
+
+<ul>
+<li>2GB RAM</li>
+<li>20GB NVMe</li>
+<li>Unlimited Slots</li>
+</ul>
+
+<button>Order Now</button>
+</div>
+
+<div class="plan">
+<h3>Pro</h3>
+<div class="price">₹349</div>
+
+<ul>
+<li>6GB RAM</li>
+<li>50GB NVMe</li>
+<li>Unlimited Slots</li>
+</ul>
+
+<button>Order Now</button>
+</div>
+
+<div class="plan">
+<h3>Extreme</h3>
+<div class="price">₹699</div>
+
+<ul>
+<li>12GB RAM</li>
+<li>100GB NVMe</li>
+<li>Unlimited Slots</li>
+</ul>
+
+<button>Order Now</button>
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="support">
+
+<h2>Need Help?</h2>
+
+<a class="btn" href="#">Join Discord</a>
+
+</section>
 
 <footer>
-© 2026 Mace Hosting | All Rights Reserved
+
+© 2026 Mace Hosting
+
 </footer>
 
 </body>
